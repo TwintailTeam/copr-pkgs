@@ -19,8 +19,8 @@ Requires:       gdk-pixbuf2
 Requires:       glib2
 Requires:       gtk3
 Requires:       hicolor-icon-theme
-Requires:       libappindicator-gtk
-Requires:       libayatana-appindicator
+Requires:       libappindicator-gtk3
+Requires:       libayatana-appindicator-gtk3
 Requires:       pango
 Requires:       webkit2gtk4.1
 
