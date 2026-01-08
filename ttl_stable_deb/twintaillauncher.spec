@@ -23,6 +23,8 @@ Requires:       libappindicator-gtk3
 Requires:       libayatana-appindicator-gtk3
 Requires:       pango
 Requires:       webkit2gtk4.1
+Requires:       mangohud
+Requires:       gamemode
 
 # Build requires for extract DEB
 BuildRequires:  binutils
