@@ -103,3 +103,6 @@ gtk-update-icon-cache %{_datadir}/icons/hicolor &> /dev/null || :
   * Sat Jan 24 2026 TukanDev <contact@tukandev.com> - 1.1.14-0
   - Update to upstream ttl-v1.1.14
   - For detailed release notes: 
+  * Sat Jan 24 2026 TukanDev <contact@tukandev.com> - 1.1.14-0
+  - Update to upstream ttl-v1.1.14
+  - For detailed release notes: 
