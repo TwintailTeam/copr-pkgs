@@ -22,7 +22,10 @@ jobs:
           fetch-depth: 0
       - name: Update spec file
         run: |
-          TAG="${{ github.event.inputs.version || github.event.client_payload.release_tag }}"
+            if [ -n "${{ github.event.inputs.version }}" ]; then
+                TAG="${{ github.event.inputs.version }}"
+          elif [ -n "${{ github.event.client_payload.release_tag }}" ]; then
+            TAG="${{ github.event.client_payload.release_tag }}"
           APPVER="${TAG#ttl-v}"
           echo "Upstream tag: $TAG | appver: $APPVER"
           ls -al .
