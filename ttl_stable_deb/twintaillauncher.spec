@@ -1,4 +1,4 @@
-%global appver  1.1.13
+%global appver  
 %global apprel  0
 
 Name:           twintaillauncher
@@ -8,7 +8,7 @@ Summary:        A multi-platform launcher for your anime games
 
 License:        GPL-3.0
 URL:            https://twintaillauncher.app/
-Source0:        https://github.com/TwintailTeam/TwintailLauncher/releases/download/ttl-v%{appver}/twintaillauncher_%{appver}_amd64.deb
+Source0:        https://github.com/TwintailTeam/TwintailLauncher/releases/download/ttl-v/twintaillauncher_.deb
 
 ExclusiveArch: x86_64
 
@@ -94,3 +94,6 @@ gtk-update-icon-cache %{_datadir}/icons/hicolor &> /dev/null || :
 * Wed Jan 07 2026 TukanDev <contact@tukandev.com> - 1.1.13-0
 - Initial package for Fedora
 - For detailed release notes check github releases page!
+  * Sat Jan 24 2026 TukanDev <contact@tukandev.com> - -0
+  - Update to upstream 
+  - For detailed release notes: 
