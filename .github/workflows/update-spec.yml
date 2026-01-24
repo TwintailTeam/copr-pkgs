@@ -21,9 +21,9 @@ jobs:
           TAG="${{ github.event.client_payload.release_tag }}"
           APPVER="${TAG#ttl-v}"
           echo "Upstream tag: $TAG | appver: $APPVER"
-          sed -i "s/^%global appver[[:space:]]\+\S\+/%global appver  $APPVER/" ./ttl_stable_deb/twintaillauncher.spec
-          sed -i "s|ttl-v%{appver}/twintaillauncher_%{appver}_amd64.deb|ttl-v$APPVER/twintaillauncher_$APPVER_amd64.deb|" ./ttl_stable_deb/twintaillauncher.spec
-          cat >> ./ttl_stable_deb/twintaillauncher.spec << EOF
+          sed -i "s/^%global appver[[:space:]]\+\S\+/%global appver  $APPVER/" ttl_stable_deb/twintaillauncher.spec
+          sed -i "s|ttl-v%{appver}/twintaillauncher_%{appver}_amd64.deb|ttl-v$APPVER/twintaillauncher_$APPVER_amd64.deb|" ttl_stable_deb/twintaillauncher.spec
+          cat >> ttl_stable_deb/twintaillauncher.spec << EOF
             * $(date +"%a %b %d %Y") TukanDev <contact@tukandev.com> - $APPVER-0
             - Update to upstream $TAG
             - For detailed release notes: ${{ github.event.client_payload.url }}
