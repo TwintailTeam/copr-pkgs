@@ -97,3 +97,6 @@ gtk-update-icon-cache %{_datadir}/icons/hicolor &> /dev/null || :
   * Sat Jan 24 2026 TukanDev <contact@tukandev.com> - -0
   - Update to upstream 
   - For detailed release notes: 
+  * Sat Jan 24 2026 TukanDev <contact@tukandev.com> - -0
+  - Update to upstream 
+  - For detailed release notes: 
