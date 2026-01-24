@@ -22,13 +22,16 @@ jobs:
           fetch-depth: 0
       - name: Update spec file
         run: |
-            if [ -n "${{ github.event.inputs.version }}" ]; then
-                TAG="${{ github.event.inputs.version }}"
+          if [ -n "${{ github.event.inputs.version }}" ]; then
+            TAG="${{ github.event.inputs.version }}"
           elif [ -n "${{ github.event.client_payload.release_tag }}" ]; then
             TAG="${{ github.event.client_payload.release_tag }}"
+          else
+            echo "ERROR: No tag source found!"
+            exit 1
+          fi
           APPVER="${TAG#ttl-v}"
           echo "Upstream tag: $TAG | appver: $APPVER"
-          ls -al .
           sed -i "s/^%global appver[[:space:]]\+\S\+/%global appver  $APPVER/" ttl_stable_deb/twintaillauncher.spec
           sed -i "s|ttl-v%{appver}/twintaillauncher_%{appver}_amd64.deb|ttl-v$APPVER/twintaillauncher_$APPVER_amd64.deb|" ttl_stable_deb/twintaillauncher.spec
           cat >> ttl_stable_deb/twintaillauncher.spec << EOF
