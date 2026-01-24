@@ -20,16 +20,17 @@ jobs:
         with:
           token: ${{ secrets.GH_PAT }}
           fetch-depth: 0
-      - name: Update spec file
+      - name: Set version
         run: |
-          if [ -n "${{ github.event.inputs.version }}" ]; then
-            TAG="${{ github.event.inputs.version }}"
-          elif [ -n "${{ github.event.client_payload.release_tag }}" ]; then
-            TAG="${{ github.event.client_payload.release_tag }}"
+          if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
+            echo "TAG=${{ github.event.inputs.version }}" >> $GITHUB_ENV
           else
-            echo "ERROR: No tag source found!"
-            exit 1
+            echo "TAG=${{ github.event.client_payload.release_tag }}" >> $GITHUB_ENV
           fi
+      - name: Update spec file
+        env:
+          TAG: ${{ env.TAG }}
+        run: |
           APPVER="${TAG#ttl-v}"
           echo "Upstream tag: $TAG | appver: $APPVER"
           sed -i "s/^%global appver[[:space:]]\+\S\+/%global appver  $APPVER/" ttl_stable_deb/twintaillauncher.spec
@@ -40,6 +41,8 @@ jobs:
             - For detailed release notes: ${{ github.event.client_payload.url }}
           EOF
       - name: Commit and push
+        env:
+          TAG: ${{ env.TAG }}
         run: |
           git config user.name "GitHub Actions Bot"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
