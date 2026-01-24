@@ -3,6 +3,10 @@ on:
   repository_dispatch:
     types: [upstream-release]
   workflow_dispatch:
+    inputs:
+      version:
+        description: "Version tag (e.g. ttl-v0.6.9)"
+        required: true
 
 jobs:
   update-spec:
@@ -18,7 +22,7 @@ jobs:
           fetch-depth: 0
       - name: Update spec file
         run: |
-          TAG="${{ github.event.client_payload.release_tag }}"
+          TAG="${{ github.event.inputs.release_tag || github.event.client_payload.release_tag }}"
           APPVER="${TAG#ttl-v}"
           echo "Upstream tag: $TAG | appver: $APPVER"
           ls -al .
