@@ -94,9 +94,9 @@ gtk-update-icon-cache %{_datadir}/icons/hicolor &> /dev/null || :
 * Wed Jan 07 2026 TukanDev <contact@tukandev.com> - 1.1.13-0
 - Initial package for Fedora
 - For detailed release notes check github releases page!
-  * Sat Jan 24 2026 TukanDev <contact@tukandev.com> - 1.1.14-0
-  - Update to upstream ttl-v1.1.14
-  - For detailed release notes: 
-  * Sun Jan 25 2026 TukanDev <contact@tukandev.com> - 1.1.15-0
-  - Update to upstream ttl-v1.1.15
-  - For detailed release notes: https://github.com/TwintailTeam/TwintailLauncher/releases/tag/ttl-v1.1.15
+* Sat Jan 24 2026 TukanDev <contact@tukandev.com> - 1.1.14-0
+- Update to upstream ttl-v1.1.14
+- For detailed release notes:
+* Sun Jan 25 2026 TukanDev <contact@tukandev.com> - 1.1.15-0
+- Update to upstream ttl-v1.1.15
+- For detailed release notes: https://github.com/TwintailTeam/TwintailLauncher/releases/tag/ttl-v1.1.15
