@@ -1,4 +1,4 @@
-%global 1.1.15
+%global appver 1.1.15
 %global apprel  0
 
 Name:           twintaillauncher
@@ -8,7 +8,7 @@ Summary:        A multi-platform launcher for your anime games
 
 License:        GPL-3.0
 URL:            https://twintaillauncher.app/
-Source0:        https://github.com/TwintailTeam/TwintailLauncher/releases/download/ttl-v1.1.14/twintaillauncher_1.1.14_amd64.deb
+Source0:        https://github.com/TwintailTeam/TwintailLauncher/releases/download/ttl-v1.1.15/twintaillauncher_1.1.15_amd64.deb
 
 ExclusiveArch: x86_64
 
@@ -94,33 +94,6 @@ gtk-update-icon-cache %{_datadir}/icons/hicolor &> /dev/null || :
 * Wed Jan 07 2026 TukanDev <contact@tukandev.com> - 1.1.13-0
 - Initial package for Fedora
 - For detailed release notes check github releases page!
-  * Sat Jan 24 2026 TukanDev <contact@tukandev.com> - -0
-  - Update to upstream 
-  - For detailed release notes: 
-  * Sat Jan 24 2026 TukanDev <contact@tukandev.com> - -0
-  - Update to upstream 
-  - For detailed release notes: 
-  * Sat Jan 24 2026 TukanDev <contact@tukandev.com> - 1.1.14-0
-  - Update to upstream ttl-v1.1.14
-  - For detailed release notes: 
-  * Sat Jan 24 2026 TukanDev <contact@tukandev.com> - 1.1.14-0
-  - Update to upstream ttl-v1.1.14
-  - For detailed release notes: 
-  * Sat Jan 24 2026 TukanDev <contact@tukandev.com> - 1.1.14-0
-  - Update to upstream ttl-v1.1.14
-  - For detailed release notes: 
-  * Sat Jan 24 2026 TukanDev <contact@tukandev.com> - 1.1.14-0
-  - Update to upstream ttl-v1.1.14
-  - For detailed release notes: 
-  * Sat Jan 24 2026 TukanDev <contact@tukandev.com> - 1.1.14-0
-  - Update to upstream ttl-v1.1.14
-  - For detailed release notes: 
-  * Sat Jan 24 2026 TukanDev <contact@tukandev.com> - 1.1.14-0
-  - Update to upstream ttl-v1.1.14
-  - For detailed release notes: 
-  * Sat Jan 24 2026 TukanDev <contact@tukandev.com> - 1.1.14-0
-  - Update to upstream ttl-v1.1.14
-  - For detailed release notes: 
   * Sat Jan 24 2026 TukanDev <contact@tukandev.com> - 1.1.14-0
   - Update to upstream ttl-v1.1.14
   - For detailed release notes: 
