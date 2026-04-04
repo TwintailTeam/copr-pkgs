@@ -1,4 +1,4 @@
-%global appver 1.1.15
+%global appver 2.0.0
 %global apprel  0
 
 Name:           twintaillauncher
@@ -6,9 +6,9 @@ Version:        %{appver}
 Release:        1%{?dist}
 Summary:        A multi-platform launcher for your anime games
 
-License:        GPL-3.0
+License:        GPL-3.0-only
 URL:            https://twintaillauncher.app/
-Source0:        https://github.com/TwintailTeam/TwintailLauncher/releases/download/ttl-v1.1.15/twintaillauncher_1.1.15_amd64.deb
+Source0:        https://github.com/TwintailTeam/TwintailLauncher/releases/download/ttl-v2.0.0/twintaillauncher_2.0.0_amd64.deb
 
 ExclusiveArch: x86_64
 
@@ -61,7 +61,7 @@ cp -p usr/share/icons/hicolor/128x128/apps/twintaillauncher.png \
    %{buildroot}%{_datadir}/icons/hicolor/128x128/apps/
 cp -p usr/share/icons/hicolor/256x256@2/apps/twintaillauncher.png \
    %{buildroot}%{_datadir}/icons/hicolor/256x256@2/apps/
-cp -p usr/lib/twintaillauncher/resources/hpatchz %{buildroot}/usr/lib/twintaillauncher/resources/
+cp -p usr/lib/twintaillauncher/resources/winetricks %{buildroot}/usr/lib/twintaillauncher/resources/
 cp -p usr/lib/twintaillauncher/resources/reaper %{buildroot}/usr/lib/twintaillauncher/resources/
 cp -p usr/lib/twintaillauncher/resources/hkrpg_patch.dll %{buildroot}/usr/lib/twintaillauncher/resources/
 
@@ -100,3 +100,6 @@ gtk-update-icon-cache %{_datadir}/icons/hicolor &> /dev/null || :
 * Sun Jan 25 2026 TukanDev <contact@tukandev.com> - 1.1.15-0
 - Update to upstream ttl-v1.1.15
 - For detailed release notes: https://github.com/TwintailTeam/TwintailLauncher/releases/tag/ttl-v1.1.15
+* Sat Apr 4 2026 TukanDev <contact@tukandev.com> - 2.0.0-0
+- Update to upstream ttl-v2.0.0
+- For detailed release notes: https://github.com/TwintailTeam/TwintailLauncher/releases/tag/ttl-v2.0.0
