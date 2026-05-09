@@ -33,8 +33,7 @@ jobs:
         run: |
           APPVER="${TAG#ttl-v}"
           echo "Upstream tag: $TAG | appver: $APPVER"
-          sed -i "s/^%global\s\+appver\s\+[0-9][0-9.]\+/ %global appver $APPVER/ ; s/^%global\s\+[0-9][0-9.]\+/ %global appver $APPVER/" ttl_stable_deb/twintaillauncher.spec
-          sed -i "s|ttl-v[0-9]\+\.[0-9]\+\.[0-9]\+/twintaillauncher_[0-9]\+\.[0-9]\+\.[0-9]\+_amd64\.deb|$TAG/twintaillauncher_${APPVER}_amd64.deb|g" ttl_stable_deb/twintaillauncher.spec
+          sed -i "s/^%global appver .*/%global appver $APPVER/" ttl_stable_deb/twintaillauncher.spec
           cat >> ttl_stable_deb/twintaillauncher.spec << EOF
 * $(date +"%a %b %d %Y") TukanDev <contact@tukandev.com> - $APPVER-0
 - Update to upstream $TAG

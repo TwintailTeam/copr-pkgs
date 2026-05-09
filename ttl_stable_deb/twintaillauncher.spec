@@ -1,5 +1,10 @@
-%global appver 2.0.0
-%global apprel  0
+%global appver 2.1.0
+
+%ifarch aarch64
+%global debarch arm64
+%else
+%global debarch amd64
+%endif
 
 Name:           twintaillauncher
 Version:        %{appver}
@@ -8,9 +13,9 @@ Summary:        A multi-platform launcher for your anime games
 
 License:        GPL-3.0-only
 URL:            https://twintaillauncher.app/
-Source0:        https://github.com/TwintailTeam/TwintailLauncher/releases/download/ttl-v2.0.0/twintaillauncher_2.0.0_amd64.deb
+Source0:        https://github.com/TwintailTeam/TwintailLauncher/releases/download/ttl-v%{appver}/twintaillauncher_%{appver}_%{debarch}.deb
 
-ExclusiveArch: x86_64
+ExclusiveArch:  x86_64 aarch64
 
 # Dependencies based on Arch Linux PKGBUILD
 Requires:       cairo
@@ -103,3 +108,6 @@ gtk-update-icon-cache %{_datadir}/icons/hicolor &> /dev/null || :
 * Sat Apr 4 2026 TukanDev <contact@tukandev.com> - 2.0.0-0
 - Update to upstream ttl-v2.0.0
 - For detailed release notes: https://github.com/TwintailTeam/TwintailLauncher/releases/tag/ttl-v2.0.0
+* Sun May 10 2026 TukanDev <contact@tukandev.com> - 2.0.0-0
+- Update to upstream ttl-v2.1.0
+- For detailed release notes: https://github.com/TwintailTeam/TwintailLauncher/releases/tag/ttl-v2.1.0
