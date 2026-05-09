@@ -1,11 +1,5 @@
 %global appver 2.1.0
 
-%ifarch aarch64
-%global debarch arm64
-%else
-%global debarch amd64
-%endif
-
 Name:           twintaillauncher
 Version:        %{appver}
 Release:        1%{?dist}
@@ -13,7 +7,8 @@ Summary:        A multi-platform launcher for your anime games
 
 License:        GPL-3.0-only
 URL:            https://twintaillauncher.app/
-Source0:        https://github.com/TwintailTeam/TwintailLauncher/releases/download/ttl-v%{appver}/twintaillauncher_%{appver}_%{debarch}.deb
+Source0:        https://github.com/TwintailTeam/TwintailLauncher/releases/download/ttl-v%{appver}/twintaillauncher_%{appver}_amd64.deb
+Source1:        https://github.com/TwintailTeam/TwintailLauncher/releases/download/ttl-v%{appver}/twintaillauncher_%{appver}_arm64.deb
 
 ExclusiveArch:  x86_64 aarch64
 
@@ -41,8 +36,11 @@ Twintaillauncher is a multi-platform launcher that brings mod support, quality-o
 TTL is an all-in-one tool for downloading, managing, and launching your favorite anime games. It’s designed with flexibility, ease of use, and customization in mind.
 
 %prep
-# Extract .deb file
+%ifarch x86_64
 ar x %{SOURCE0}
+%else
+ar x %{SOURCE1}
+%endif
 tar -xzf data.tar.gz
 
 %build
