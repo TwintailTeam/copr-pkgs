@@ -34,11 +34,11 @@ jobs:
           APPVER="${TAG#ttl-v}"
           echo "Upstream tag: $TAG | appver: $APPVER"
           sed -i "s/^%global appver .*/%global appver $APPVER/" ttl_stable_deb/twintaillauncher.spec
-          cat >> ttl_stable_deb/twintaillauncher.spec << EOF
-* $(date +"%a %b %d %Y") TukanDev <contact@tukandev.com> - $APPVER-0
-- Update to upstream $TAG
-- For detailed release notes: ${{ github.event.client_payload.url }}
-          EOF
+          {
+            echo "* $(date +"%a %b %d %Y") TukanDev <contact@tukandev.com> - $APPVER-0"
+            echo "- Update to upstream $TAG"
+            echo "- For detailed release notes: ${{ github.event.client_payload.url }}"
+          } >> ttl_stable_deb/twintaillauncher.spec
       - name: Commit and push
         env:
           TAG: ${{ env.TAG }}
