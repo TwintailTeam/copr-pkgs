@@ -1,4 +1,4 @@
-%global appver 2.1.1
+%global appver 2.2.0
 
 Name:           twintaillauncher
 Version:        %{appver}
@@ -67,6 +67,7 @@ cp -p usr/share/icons/hicolor/256x256@2/apps/twintaillauncher.png \
 cp -p usr/lib/twintaillauncher/resources/winetricks %{buildroot}/usr/lib/twintaillauncher/resources/
 cp -p usr/lib/twintaillauncher/resources/reaper %{buildroot}/usr/lib/twintaillauncher/resources/
 cp -p usr/lib/twintaillauncher/resources/hkrpg_patch.dll %{buildroot}/usr/lib/twintaillauncher/resources/
+cp -r usr/lib/twintaillauncher/resources/locales %{buildroot}/usr/lib/twintaillauncher/resources/
 
 
 %post
@@ -112,3 +113,6 @@ gtk-update-icon-cache %{_datadir}/icons/hicolor &> /dev/null || :
 * Mon May 11 2026 TukanDev <contact@tukandev.com> - 2.1.1-0
 - Update to upstream ttl-v2.1.1
 - For detailed release notes: https://github.com/TwintailTeam/TwintailLauncher/releases/tag/ttl-v2.1.1
+* Mon May 24 2026 TukanDev <contact@tukandev.com> - 2.2.0-0
+- Update to upstream ttl-v2.2.0
+- For detailed release notes: https://github.com/TwintailTeam/TwintailLauncher/releases/tag/ttl-v2.2.0
