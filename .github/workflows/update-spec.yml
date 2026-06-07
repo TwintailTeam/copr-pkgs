@@ -4,6 +4,9 @@ on:
     types: [upstream-release]
   workflow_dispatch:
     inputs:
+      pkg_desc:
+        description: "Package summary (e.g. Your anime games, one launcher)"
+        required: true
       version:
         description: "Version tag (e.g. ttl-v0.6.9)"
         required: true
@@ -27,6 +30,13 @@ jobs:
           else
             echo "TAG=${{ github.event.client_payload.release_tag }}" >> $GITHUB_ENV
           fi
+      - name: Set package description
+        run: |
+          if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
+            echo "PKG_DESC=${{ github.event.inputs.pkg_desc }}" >> $GITHUB_ENV
+          else
+            echo "PKG_DESC=${{ github.event.client_payload.pkg_desc }}" >> $GITHUB_ENV
+          fi
       - name: Update spec file
         env:
           TAG: ${{ env.TAG }}
@@ -34,6 +44,7 @@ jobs:
           APPVER="${TAG#ttl-v}"
           echo "Upstream tag: $TAG | appver: $APPVER"
           sed -i "s/^%global appver .*/%global appver $APPVER/" ttl_stable_deb/twintaillauncher.spec
+          sed -i "s/^Summary:        .*/Summary:        $PKG_DESC/" ttl_stable_deb/twintaillauncher.spec
           {
             echo "* $(date +"%a %b %d %Y") TukanDev <contact@tukandev.com> - $APPVER-0"
             echo "- Update to upstream $TAG"

@@ -3,7 +3,7 @@
 Name:           twintaillauncher
 Version:        %{appver}
 Release:        1%{?dist}
-Summary:        A multi-platform launcher for your anime games
+Summary:        Your anime games, one launcher
 
 License:        GPL-3.0-only
 URL:            https://twintaillauncher.app/
