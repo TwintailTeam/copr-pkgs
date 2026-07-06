@@ -25,6 +25,7 @@ Requires:       pango
 Requires:       webkit2gtk4.1
 Requires:       mangohud
 Requires:       gamemode
+Requires:       gamescope
 
 # Build requires for extract DEB
 BuildRequires:  binutils
