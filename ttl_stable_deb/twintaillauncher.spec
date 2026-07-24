@@ -1,4 +1,4 @@
-%global appver 2.3.0
+%global appver 2.4.0
 
 Name:           twintaillauncher
 Version:        %{appver}
@@ -123,3 +123,6 @@ gtk-update-icon-cache %{_datadir}/icons/hicolor &> /dev/null || :
 * Mon Jun 15 2026 TukanDev <contact@tukandev.com> - 2.3.0-0
 - Update to upstream ttl-v2.3.0
 - For detailed release notes: https://github.com/TwintailTeam/TwintailLauncher/releases/tag/ttl-v2.3.0
+* Fri Jul 24 2026 TukanDev <contact@tukandev.com> - 2.4.0-0
+- Update to upstream ttl-v2.4.0
+- For detailed release notes: https://github.com/TwintailTeam/TwintailLauncher/releases/tag/ttl-v2.4.0
