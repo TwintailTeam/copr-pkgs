@@ -68,6 +68,7 @@ cp -p usr/share/icons/hicolor/256x256@2/apps/twintaillauncher.png \
 cp -p usr/lib/twintaillauncher/resources/winetricks %{buildroot}/usr/lib/twintaillauncher/resources/
 cp -p usr/lib/twintaillauncher/resources/reaper %{buildroot}/usr/lib/twintaillauncher/resources/
 cp -p usr/lib/twintaillauncher/resources/hkrpg_patch.dll %{buildroot}/usr/lib/twintaillauncher/resources/
+cp -p usr/lib/twintaillauncher/resources/suspend_start.exe %{buildroot}/usr/lib/twintaillauncher/resources/
 cp -r usr/lib/twintaillauncher/resources/locales %{buildroot}/usr/lib/twintaillauncher/resources/
 
 
